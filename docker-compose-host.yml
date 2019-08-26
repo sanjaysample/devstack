@@ -5,12 +5,12 @@ services:
     volumes:
       - /tmp/credentials:/edx/app/credentials/credentials:cached
       - credentials_node_modules:/edx/app/credentials/credentials/node_modules
-      - ${DEVSTACK_WORKSPACE}/src:/edx/src:cached
+      - ../src:/edx/src:cached
   discovery:
       volumes:
       - /opt/atlassian/pipelines/agent/build/tmp/course-discovery:/edx/app/discovery/discovery:cached
       - discovery_node_modules:/edx/app/discovery/discovery/node_modules
-      - /opt/atlassian/pipelines/agent/build/tmp/src:/edx/src:cached
+      - ../src:/edx/src:cached
   ecommerce:
     volumes:
       - /opt/atlassian/pipelines/agent/build/tmp/ecommerce:/edx/app/ecommerce/ecommerce:cached
