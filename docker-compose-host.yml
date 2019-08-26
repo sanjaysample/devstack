@@ -36,7 +36,7 @@ services:
       - ../src:/edx/src:cached
   forum:
     volumes:
-      - ../cs_comments_service:/edx/app/forum/cs_c../omments_service:cached
+      - ../cs_comments_service:/edx/app/forum/cs_comments_service:cached
   registrar:
     volumes:
       - ../registrar:/edx/app/registrar/registrar
