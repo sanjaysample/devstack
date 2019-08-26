@@ -3,22 +3,22 @@ version: "2.1"
 services:
   credentials:
     volumes:
-      - /tmp/credentials:/edx/app/credentials/credentials:cached
+      - ../credentials:/edx/app/credentials/credentials:cached
       - credentials_node_modules:/edx/app/credentials/credentials/node_modules
       - ../src:/edx/src:cached
   discovery:
       volumes:
-      - /opt/atlassian/pipelines/agent/build/tmp/course-discovery:/edx/app/discovery/discovery:cached
+      - ../course-discovery:/edx/app/discovery/discovery:cached
       - discovery_node_modules:/edx/app/discovery/discovery/node_modules
       - ../src:/edx/src:cached
   ecommerce:
     volumes:
-      - /opt/atlassian/pipelines/agent/build/tmp/ecommerce:/edx/app/ecommerce/ecommerce:cached
+      - ../ecommerce:/edx/app/ecommerce/ecommerce:cached
       - ecommerce_node_modules:/edx/app/ecommerce/ecommerce/node_modules
       - ../src:/edx/src:cached
   lms:
     volumes:
-      - /opt/atlassian/pipelines/agent/build/tmp/edx-platform:/edx/app/edxapp/edx-platform:cached
+      - ../edx-platform:/edx/app/edxapp/edx-platform:cached
       - edxapp_media:/edx/var/edxapp/media
       - edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
       - edxapp_uploads:/edx/var/edxapp/uploads
@@ -29,7 +29,7 @@ services:
       - ../src:/edx/src:cached
   studio:
     volumes:
-      - /opt/atlassian/pipelines/agent/build/tmp/edx-platform:/edx/app/edxapp/edx-platform:cached
+      - ../edx-platform:/edx/app/edxapp/edx-platform:cached
       - edxapp_media:/edx/var/edxapp/media
       - edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
       - edxapp_uploads:/edx/var/edxapp/uploads
