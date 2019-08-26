@@ -123,7 +123,7 @@ services:
     ports:
       - "18381:18381"
     volumes:
-      - discovery_assets:/edx/var/discovery/
+      - ../discovery_assets:/edx/var/discovery/
   ecommerce:
     command: bash -c 'source /edx/app/ecommerce/ecommerce_env && while true; do python /edx/app/ecommerce/ecommerce/manage.py runserver 0.0.0.0:18130; sleep 2; done'
     container_name: edx.devstack.ecommerce
@@ -305,7 +305,7 @@ services:
     ports:
       - "3141:3141"
     volumes:
-      - devpi_data:/data
+      - ../devpi_data:/data
 
   gradebook:
     extends:
