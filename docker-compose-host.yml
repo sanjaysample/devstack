@@ -7,11 +7,6 @@ services:
       - credentials_node_modules:/edx/app/credentials/credentials/node_modules
       - ../src:/edx/src:cached
   
-  ecommerce:
-    volumes:
-      - ../ecommerce:/edx/app/ecommerce/ecommerce:cached
-      - ecommerce_node_modules:/edx/app/ecommerce/ecommerce/node_modules
-      - ../src:/edx/src:cached
   lms:
     volumes:
       - ../edx-platform:/edx/app/edxapp/edx-platform:cached
