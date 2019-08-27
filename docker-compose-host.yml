@@ -36,10 +36,7 @@ services:
     volumes:
       - ../gradebook:/edx/app/gradebook:cached
       - gradebook_node_modules:/edx/app/gradebook/node_modules
-  program-manager:
-    volumes:
-      - ../frontend-app-program-manager:/edx/app/program-manager:cached
-      - program_manager_node_modules:/edx/app/program-manager/node_modules
+  
 
 volumes:
   credentials_node_modules:
@@ -48,4 +45,4 @@ volumes:
   edxapp_node_modules:
   edxapp_uploads:
   gradebook_node_modules:
-  program_manager_node_modules:
+  
