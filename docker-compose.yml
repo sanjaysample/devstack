@@ -105,26 +105,7 @@ services:
     ports:
       - "18150:18150"
 
-  discovery:
-    command: bash -c 'source /edx/app/discovery/discovery_env && while true; do python /edx/app/discovery/discovery/manage.py runserver 0.0.0.0:18381; sleep 2; done'
-    container_name: edx.devstack.discovery
-    hostname: discovery.devstack.edx
-    depends_on:
-      - mysql
-      - elasticsearch
-      - memcached
-    # Allows attachment to the discovery service using 'docker attach <containerID>'.
-    stdin_open: true
-    tty: true
-    environment:
-      TEST_ELASTICSEARCH_URL: "http://edx.devstack.elasticsearch:9200"
-      ENABLE_DJANGO_TOOLBAR: 1
-    image: edxops/discovery:${OPENEDX_RELEASE:-latest}
-    ports:
-      - "18381:18381"
-    volumes:
-      - ./discovery_assets:/edx/var/discovery/
-      
+       
   ecommerce:
     command: bash -c 'source /edx/app/ecommerce/ecommerce_env && while true; do python /edx/app/ecommerce/ecommerce/manage.py runserver 0.0.0.0:18130; sleep 2; done'
     container_name: edx.devstack.ecommerce
