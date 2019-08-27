@@ -6,11 +6,7 @@ services:
       - ../credentials:/edx/app/credentials/credentials:cached
       - credentials_node_modules:/edx/app/credentials/credentials/node_modules
       - ../src:/edx/src:cached
-  discovery:
-      volumes:
-      - ../course-discovery:/edx/app/discovery/discovery:cached
-      - discovery_node_modules:/edx/app/discovery/discovery/node_modules
-      - ../src:/edx/src:cached
+  
   ecommerce:
     volumes:
       - ../ecommerce:/edx/app/ecommerce/ecommerce:cached
@@ -52,7 +48,6 @@ services:
 
 volumes:
   credentials_node_modules:
-  discovery_node_modules:
   ecommerce_node_modules:
   edxapp_media:
   edxapp_node_modules:
