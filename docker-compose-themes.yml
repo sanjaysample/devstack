@@ -1,7 +1,7 @@
 version: "2.1"
 
 services:
-   lms:
+  lms:
       volumes:
       - ${DEVSTACK_WORKSPACE}/edx-themes:/edx/app/edx-themes:cached
   studio:
