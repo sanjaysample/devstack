@@ -28,15 +28,7 @@ services:
   forum:
     volumes:
       - ../cs_comments_service:/edx/app/forum/cs_comments_service:cached
-  registrar:
-    volumes:
-      - ../registrar:/edx/app/registrar/registrar
-  
-  gradebook:
-    volumes:
-      - ../gradebook:/edx/app/gradebook:cached
-      - gradebook_node_modules:/edx/app/gradebook/node_modules
-  
+    
 
 volumes:
   credentials_node_modules:
@@ -44,5 +36,5 @@ volumes:
   edxapp_media:
   edxapp_node_modules:
   edxapp_uploads:
-  gradebook_node_modules:
+ 
   
