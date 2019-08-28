@@ -64,7 +64,7 @@ services:
     # ports:
     #  - "27017:27017"
     volumes:
-      - ../mongo_data:/data/db
+      - ./mongo_data:/data/db
 
   mysql:
     command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
@@ -77,7 +77,7 @@ services:
     # ports:
     #   - "3506:3306"
     volumes:
-      - ../mysql_data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
 
   redis:
     container_name: edx.devstack.redis
@@ -136,7 +136,7 @@ services:
       # - "18003:18003"
       # - "18031:18031"
     volumes:
-      - ../edxapp_lms_assets:/edx/var/edxapp/staticfiles/
+      - ./edxapp_lms_assets:/edx/var/edxapp/staticfiles/
 
   edx_notes_api:
     command: bash -c 'source /edx/app/edx_notes_api/edx_notes_api_env && while true; do python /edx/app/edx_notes_api/edx_notes_api/manage.py runserver 0.0.0.0:18120 --settings notesserver.settings.devstack; sleep 2; done'
@@ -211,7 +211,7 @@ services:
     ports:
       - "3141:3141"
     volumes:
-      - ../devpi_data:/data
+      - ./devpi_data:/data
 
   gradebook:
     extends:
