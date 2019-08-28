@@ -32,8 +32,8 @@ services:
     #   - "9200:9200"
     #   - "9300:9300"
     volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
-      - elasticsearch_data:/usr/share/elasticsearch/logs
+      - ./elasticsearch_data:/usr/share/elasticsearch/data
+      - ./elasticsearch_data:/usr/share/elasticsearch/logs
 
   firefox:
     container_name: edx.devstack.firefox
