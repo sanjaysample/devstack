@@ -42,8 +42,4 @@ for app in "${apps[@]}"; do
     docker-compose exec -T $app bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && paver update_assets --settings devstack_docker'
 done
 
-# Provision a retirement service account user
-./provision-retirement-user.sh retirement retirement_service_worker
 
-# Add demo program
-./programs/provision.sh lms
