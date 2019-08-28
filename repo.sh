@@ -39,7 +39,7 @@ name_pattern=".*/(.*).git"
 _checkout ()
 {
     repos_to_checkout=("$@")
-
+    echo $OPENEDX_RELEASE
     if [ -z "$OPENEDX_RELEASE" ]; then
         branch="master"
     else
@@ -87,12 +87,13 @@ _clone ()
             if [ "${SHALLOW_CLONE}" == "1" ]; then
                 git clone --depth=1 $repo
             else
-                git clone $repo
+               echo $OPENEDX_RELEASE
+               echo $repo
+               dir
+               git clone $repo
+               cd ${DEVSTACK_WORKSPACE}/${name}
             fi
-            if [ -n "${OPENEDX_RELEASE}" ]; then
-                git checkout open-release/${OPENEDX_RELEASE}
-            fi
-        fi
+          fi
     done
     cd - &> /dev/null
 }
