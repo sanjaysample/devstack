@@ -92,6 +92,7 @@ _clone ()
                dir
                git clone $repo
                cd ${DEVSTACK_WORKSPACE}/${name}
+               cd ..
             fi
           fi
     done
