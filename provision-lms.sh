@@ -12,7 +12,7 @@ apps=( lms studio )
 for app in "${apps[@]}"; do
     docker-compose $DOCKER_COMPOSE_FILES up -d $app
 done
-docker ps
+docker ps -a --no-trunc
 sleep 120
 docker ps
 docker-compose exec -T lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs || true && cd /edx/var/log/edx/lms && dir' 
