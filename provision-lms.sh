@@ -15,6 +15,7 @@ done
 docker ps -a --no-trunc
 sleep 120
 docker ps
+docker exec edx.devstack.lms /bin/sh -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs || true && cd /edx/var/log/edx/lms && dir'
 docker-compose exec -T lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs || true && cd /edx/var/log/edx/lms && dir' 
 
 #Installing prereqs crashes the process
